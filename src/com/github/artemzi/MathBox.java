@@ -4,14 +4,14 @@ import java.util.*;
 
 class MathBox {
 
-    private Set<Integer> storage = new TreeSet<>();
+    private NavigableSet<Integer> storage = new TreeSet<>();
 
     MathBox(Integer[] data) {
-        storage.addAll(Arrays.asList(data));
+        this.storage.addAll(Arrays.asList(data));
     }
 
     int summator() {
-        return storage.stream().mapToInt(Integer::intValue).sum();
+        return this.storage.stream().mapToInt(Integer::intValue).sum();
     }
 
     ArrayList<Double> splitter(int divider) {
@@ -29,7 +29,7 @@ class MathBox {
     * */
     boolean removeElementIfExists(Integer digit) {
         // remove, is a method from a collection and it already contains all necessary checks
-        return storage.remove(digit);
+        return this.storage.remove(digit);
     }
 
     @Override
@@ -37,19 +37,19 @@ class MathBox {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MathBox mathBox = (MathBox) o;
-        if (storage.hashCode() != mathBox.hashCode()) return false;
-        return Objects.equals(storage, mathBox.storage);
+        if (this.storage.hashCode() != mathBox.hashCode()) return false;
+        return Objects.equals(this.storage, mathBox.storage);
     }
 
     @Override
     public int hashCode() {
-        return storage.hashCode();
+        return this.storage.hashCode();
     }
 
     @Override
     public String toString() {
         return "MathBox{" +
-                storage +
+                this.storage +
                 '}';
     }
 }
