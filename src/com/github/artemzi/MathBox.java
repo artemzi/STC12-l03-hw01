@@ -1,11 +1,8 @@
 package com.github.artemzi;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
-class MathBox {
+class MathBox extends HashMap {
 
     private Set<Integer> storage = new TreeSet<>();
 
@@ -23,5 +20,26 @@ class MathBox {
             result.add((double) current / divider);
         }
         return result;
+    }
+
+    @Override
+    public boolean equals(Object o) { // TODO: does current code satisfying contract?
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MathBox mathBox = (MathBox) o;
+        if (storage.hashCode() != mathBox.hashCode()) return false;
+        return Objects.equals(storage, mathBox.storage);
+    }
+
+    @Override
+    public int hashCode() {
+        return storage.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "MathBox{" +
+                storage +
+                '}';
     }
 }
