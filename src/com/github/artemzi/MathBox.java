@@ -2,7 +2,7 @@ package com.github.artemzi;
 
 import java.util.*;
 
-class MathBox extends HashMap {
+class MathBox {
 
     private Set<Integer> storage = new TreeSet<>();
 
@@ -20,6 +20,16 @@ class MathBox extends HashMap {
             result.add((double) current / divider);
         }
         return result;
+    }
+
+    /**
+     * Method return true if succeed or false
+     * @param  digit, object for removing
+     * @return boolean
+    * */
+    boolean removeElementIfExists(Integer digit) {
+        // remove, is a method from a collection and it already contains all necessary checks
+        return storage.remove(digit);
     }
 
     @Override

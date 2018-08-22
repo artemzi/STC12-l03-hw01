@@ -1,5 +1,6 @@
 package com.github.artemzi;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
@@ -15,5 +16,9 @@ public class Main {
 
         // third task
         System.out.println("[splitter after ...] " + mathBox.splitter(123));
+
+        // Fifth task
+        Random random = new Random();
+        System.out.println("[removeElementIfExists] " + mathBox.removeElementIfExists(data[random.nextInt(100)]));
     }
 }
