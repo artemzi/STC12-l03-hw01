@@ -10,6 +10,6 @@ public class Main {
         }
         MathBox mathBox = new MathBox(data);
 
-        System.out.println(mathBox.storage);
+        System.out.printf("[summator] %d", mathBox.summator());
     }
 }

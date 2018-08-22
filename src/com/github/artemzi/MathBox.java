@@ -11,4 +11,8 @@ class MathBox {
     MathBox(Integer[] data) {
         storage.addAll(Arrays.asList(data));
     }
+
+    public int summator() {
+        return storage.stream().mapToInt(Integer::intValue).sum();
+    }
 }
