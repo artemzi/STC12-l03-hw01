@@ -1,6 +1,7 @@
 package com.github.artemzi;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 class MathBox {
 
@@ -15,10 +16,12 @@ class MathBox {
     }
 
     ArrayList<Double> splitter(int divider) {
-        ArrayList<Double> result = new ArrayList<>();
-        for (Integer current : this.storage) {
-            result.add((double) current / divider);
-        }
+        ArrayList<Double> result = new ArrayList<>(this.storage.size());
+        result.addAll(this.storage
+                .stream()
+                .map(e -> (double) e) // convert type
+                .collect(Collectors.toList()));
+        result.replaceAll(e -> e / divider);
         return result;
     }
 

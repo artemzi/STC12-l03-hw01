@@ -15,7 +15,7 @@ public class Main {
         System.out.printf("[summator] %d%n", mathBox.summator());
 
         // third task
-        System.out.println("[splitter after ...] " + mathBox.splitter(123));
+        System.out.println("[splitter] " + mathBox.splitter(123));
 
         // Fifth task
         Random random = new Random();
